@@ -1,0 +1,24 @@
+{
+ "content": null, 
+ "creation": "2019-10-06 10:31:14.749654", 
+ "docstatus": 0, 
+ "doctype": "Page", 
+ "idx": 0, 
+ "modified": "2019-10-06 11:33:04.575341", 
+ "modified_by": "Administrator", 
+ "module": "HR", 
+ "name": "reminder", 
+ "owner": "Administrator", 
+ "page_name": "Reminder", 
+ "restrict_to_domain": "Services", 
+ "roles": [
+  {
+   "role": "Administrator"
+  }
+ ], 
+ "script": null, 
+ "standard": "Yes", 
+ "style": null, 
+ "system_page": 1, 
+ "title": "Reminder"
+}

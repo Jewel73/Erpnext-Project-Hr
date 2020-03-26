@@ -1,0 +1,79 @@
+import frappe
+import random
+import time
+from zk import ZK, const
+from datetime import datetime
+
+@frappe.whitelist()
+def get_users():
+	group =[]
+	conn = None
+	zk = ZK('10.33.210.20', port=4370, timeout=100, password=3636, force_udp=False, ommit_ping=False)
+	try:
+	    conn = zk.connect()
+	    conn.disable_device()
+	    users = conn.get_users()
+	    return "User Added"
+	except Exception as e:
+	    print ("Process terminate : {}".format(e))
+	finally:
+	    if conn:
+	        conn.disconnect()
+
+@frappe.whitelist()
+def get_attendance():
+	group =[]
+	conn = None
+	zk = ZK('10.33.210.20', port=4370, timeout=100, password=3636, force_udp=False, ommit_ping=False)
+	try:
+	    conn = zk.connect()
+	    conn.disable_device()
+	    attendances = conn.get_attendance()
+	    users = conn.get_users()
+	    user_name = ""
+	    for i, att in enumerate(attendances):
+		for user in users:
+			if user.uid == att.uid:
+				user_name= user.name			
+			    	dt = str(att.timestamp).split(" ")
+	    			today = datetime.strptime(dt[0], '%Y-%m-%d').strftime('%d-%m-%Y')
+    	        		frappe.db.sql("INSERT INTO tabAttendance(name,employee_name, status,docstatus,uid, date,time,out_time) VALUES('"+str(random.randint(1,10000000))+"','"+user_name+"','Present',1,%s, '"+str(today)+"', '"+dt[1]+"','"+dt[1]+"') ON DUPLICATE KEY UPDATE employee_name='"+user_name+"', out_time='"+dt[1]+"', date='"+str(today)+"'",str(att.uid))
+	    return "success"
+	except Exception as e:
+	    return "Error "+ str(e)
+	finally:
+	    if conn:
+	        conn.disconnect()
+
+
+
+#[73 : 2019-10-09 17:18:08 (4, 255)]
+
+@frappe.whitelist()
+def update_log():
+	conn = None
+	zk = ZK('10.33.210.20', port=4370, timeout=5, password=3636, force_udp=False, ommit_ping=False)
+	try:
+		conn = zk.connect()
+		conn.disable_device()
+		hasFound= []
+		max_time = frappe.db.sql("SELECT MAX(date), MAX(time) FROM tabLogtable")
+		if len(max_time)>0:
+			Dt = str(max_time[0][0])+" "+str(max_time[0][1])
+			nDt = datetime.strptime(Dt, '%d-%m-%Y %H:%M:%S')
+			attendances = conn.get_attendance()
+			for i, att in enumerate(attendances):
+				st = att.timestamp
+				if st > nDt:
+					sp = str(att.timestamp).split(" ")
+					dtime = datetime.strptime(sp[0], '%Y-%m-%d').strftime('%d-%m-%Y')
+					frappe.db.sql("INSERT INTO tabLogtable(name,employee_name,uid,date,time,out_time) VALUES('"+str(random.randint(1,10000))+"','dummy','"+str(att.uid)+"','"+str(dtime)+"','"+str(sp[1])+"','out')")
+					hasFound.append(dtime)
+			return len(hasFound)
+		else:
+			return max_time
+	except Exception as e:
+		return e
+	finally:
+		if conn:
+			conn.disconnect()

@@ -1,0 +1,32 @@
+{
+ "add_total_row": 0, 
+ "creation": "2019-10-28 15:46:04.371688", 
+ "disable_prepared_report": 0, 
+ "disabled": 0, 
+ "docstatus": 0, 
+ "doctype": "Report", 
+ "idx": 0, 
+ "is_standard": "Yes", 
+ "json": "[{\"label\":\"Salary Slip ID\",\"fieldname\":\"Salary Slip ID\",\"fieldtype\":\"Link\",\"width\":150,\"options\":\"Salary Slip\",\"id\":\"Salary Slip ID\",\"name\":\"Salary Slip ID\",\"editable\":false,\"compareValue\":null},{\"label\":\"Employee\",\"fieldname\":\"Employee\",\"fieldtype\":\"Link\",\"width\":120,\"options\":\"Employee\",\"id\":\"Employee\",\"name\":\"Employee\",\"editable\":false,\"compareValue\":null},{\"label\":\"Employee Name\",\"fieldname\":\"Employee Name\",\"fieldtype\":\"\",\"width\":140,\"id\":\"Employee Name\",\"name\":\"Employee Name\",\"editable\":false,\"compareValue\":null},{\"label\":\"Branch\",\"fieldname\":\"Branch\",\"fieldtype\":\"Link\",\"width\":120,\"options\":\"Branch\",\"id\":\"Branch\",\"name\":\"Branch\",\"editable\":false,\"compareValue\":null},{\"label\":\"Department\",\"fieldname\":\"Department\",\"fieldtype\":\"Link\",\"width\":120,\"options\":\"Department\",\"id\":\"Department\",\"name\":\"Department\",\"editable\":false,\"compareValue\":null},{\"fieldname\":\"emp_id\",\"fieldtype\":\"Data\",\"label\":\"Staff ID: \",\"link_field\":\"Employee\",\"doctype\":\"Employee\",\"width\":100,\"id\":\"emp_id\",\"name\":\"Staff ID: \",\"editable\":false,\"compareValue\":null},{\"label\":\"Designation\",\"fieldname\":\"Designation\",\"fieldtype\":\"Link\",\"width\":120,\"options\":\"Designation\",\"id\":\"Designation\",\"name\":\"Designation\",\"editable\":false,\"compareValue\":null},{\"label\":\"Company\",\"fieldname\":\"Company\",\"fieldtype\":\"Link\",\"width\":120,\"options\":\"Company\",\"id\":\"Company\",\"name\":\"Company\",\"editable\":false,\"compareValue\":null},{\"label\":\"Start Date\",\"fieldname\":\"Start Date\",\"fieldtype\":\"\",\"width\":80,\"id\":\"Start Date\",\"name\":\"Start Date\",\"editable\":false,\"compareValue\":null},{\"label\":\"End Date\",\"fieldname\":\"End Date\",\"fieldtype\":\"\",\"width\":80,\"id\":\"End Date\",\"name\":\"End Date\",\"editable\":false,\"compareValue\":null},{\"label\":\"Leave Without Pay\",\"fieldname\":\"Leave Without Pay\",\"fieldtype\":\"Float\",\"width\":130,\"id\":\"Leave Without Pay\",\"name\":\"Leave Without Pay\",\"editable\":false,\"compareValue\":null},{\"label\":\"Payment Days\",\"fieldname\":\"Payment Days\",\"fieldtype\":\"Float\",\"width\":120,\"id\":\"Payment Days\",\"name\":\"Payment Days\",\"editable\":false,\"compareValue\":null},{\"fieldname\":\"total_working_days\",\"fieldtype\":\"Float\",\"label\":\"Total w/day\",\"link_field\":\"Salary Slip ID\",\"doctype\":\"Salary Slip\",\"width\":100,\"id\":\"total_working_days\",\"name\":\"Total w/day\",\"editable\":false,\"compareValue\":null},{\"fieldname\":\"absent\",\"fieldtype\":\"Float\",\"label\":\"Absent\",\"link_field\":\"Salary Slip ID\",\"doctype\":\"Salary Slip\",\"width\":100,\"id\":\"absent\",\"name\":\"Absent\",\"editable\":false,\"compareValue\":null},{\"label\":\"House Rent\",\"fieldname\":\"House Rent\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"House Rent\",\"name\":\"House Rent\",\"editable\":false,\"compareValue\":null},{\"label\":\"Others\",\"fieldname\":\"Others\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Others\",\"name\":\"Others\",\"editable\":false,\"compareValue\":null},{\"label\":\"Basic\",\"fieldname\":\"Basic\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Basic\",\"name\":\"Basic\",\"editable\":false,\"compareValue\":null},{\"label\":\"Transport Allowence\",\"fieldname\":\"Transport Allowence\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Transport Allowence\",\"name\":\"Transport Allowence\",\"editable\":false,\"compareValue\":null},{\"label\":\"Mobile Ceiling\",\"fieldname\":\"Mobile Ceiling\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Mobile Ceiling\",\"name\":\"Mobile Ceiling\",\"editable\":false,\"compareValue\":null},{\"label\":\"Conveyance\",\"fieldname\":\"Conveyance\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Conveyance\",\"name\":\"Conveyance\",\"editable\":false,\"compareValue\":null},{\"label\":\"Gross Pay\",\"fieldname\":\"Gross Pay\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Gross Pay\",\"name\":\"Gross Pay\",\"editable\":false,\"compareValue\":null},{\"label\":\"Adjust Amount\",\"fieldname\":\"Adjust Amount\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Adjust Amount\",\"name\":\"Adjust Amount\",\"editable\":false,\"compareValue\":null},{\"label\":\"Tax Deduction\",\"fieldname\":\"Tax Deduction\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Tax Deduction\",\"name\":\"Tax Deduction\",\"editable\":false,\"compareValue\":null},{\"label\":\"Loan Repayment\",\"fieldname\":\"Loan Repayment\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Loan Repayment\",\"name\":\"Loan Repayment\",\"editable\":false,\"compareValue\":null},{\"label\":\"Total Deduction\",\"fieldname\":\"Total Deduction\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Total Deduction\",\"name\":\"Total Deduction\",\"editable\":false,\"compareValue\":null},{\"label\":\"Net Pay\",\"fieldname\":\"Net Pay\",\"fieldtype\":\"Currency\",\"width\":120,\"id\":\"Net Pay\",\"name\":\"Net Pay\",\"editable\":false,\"compareValue\":null},{\"fieldname\":\"signature\",\"fieldtype\":\"Data\",\"label\":\"Signature\",\"link_field\":\"Salary Slip ID\",\"doctype\":\"Salary Slip\",\"width\":100,\"id\":\"signature\",\"name\":\"Signature\",\"editable\":false,\"compareValue\":null}]", 
+ "modified": "2019-10-29 16:37:23.004261", 
+ "modified_by": "Administrator", 
+ "module": "HR", 
+ "name": "HO Salary Sheet", 
+ "owner": "Administrator", 
+ "prepared_report": 0, 
+ "ref_doctype": "Salary Slip", 
+ "reference_report": "Salary Register", 
+ "report_name": "HO Salary Sheet", 
+ "report_type": "Custom Report", 
+ "roles": [
+  {
+   "role": "HR Manager"
+  }, 
+  {
+   "role": "Employee"
+  }, 
+  {
+   "role": "HR User"
+  }
+ ]
+}
